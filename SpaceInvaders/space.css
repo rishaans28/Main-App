@@ -1,0 +1,26 @@
+body {
+    font-family: "Courier New", "Courier", monospace;
+    text-align: center;
+}
+
+#board {
+    background-color: black;
+}
+
+.home button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #3498db;
+    color: white;
+}
+
+.home button:hover {
+    background-color: #2980b9;
+}
