@@ -28,43 +28,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     addBtn.addEventListener('click', () => {
-    const nameInput = document.getElementById('name');
-    const amountInput = document.getElementById('amount');
-    const dateInput = document.getElementById('date');
-    const categorySelect = document.getElementById('category');
-
-    const name = nameInput.value.trim();
-    const amount = parseFloat(amountInput.value);
-    const date = dateInput.value;
-    const category = categorySelect.value;
-
-    if (!name || isNaN(amount) || !date) return;
-    if (expenses.some(e => e.name === name)) return;
-
-    expenses.push({ name, amount, date, category });
-    saveToStorage();
-    renderTable();
-
-    nameInput.value = '';
-    amountInput.value = '';
-    dateInput.value = '';
-    categorySelect.selectedIndex = 0;
-    });
-
-    removeBtn.addEventListener('click', () => {
-    const selectedRows = Array.from(document.querySelectorAll('tr.selected'));
-    const indicesToRemove = selectedRows
-        .map(row => parseInt(row.dataset.index))
-        .sort((a, b) => b - a);
-    indicesToRemove.forEach(idx => expenses.splice(idx, 1));
-    saveToStorage();
-    renderTable();
+        const nameInput = document.getElementById('name');
+        const amountInput = document.getElementById('amount');
+        const dateInput = document.getElementById('date');
+        const categorySelect = document.getElementById('category');
+    
+        const name = nameInput.value.trim();
+        const amount = parseFloat(amountInput.value);
+        const date = dateInput.value;
+        const category = categorySelect.value;
+    
+        if (!name || isNaN(amount) || !date) return;
+        if (expenses.some(e => e.name === name)) return;
+    
+        expenses.push({ name, amount, date, category });
+        saveToStorage();
+        renderTable();
+    
+        nameInput.value = '';
+        amountInput.value = '';
+        dateInput.value = '';
+        categorySelect.selectedIndex = 0;
+        });
+    
+        removeBtn.addEventListener('click', () => {
+        const selectedRows = Array.from(document.querySelectorAll('tr.selected'));
+        const indicesToRemove = selectedRows
+            .map(row => parseInt(row.dataset.index))
+            .sort((a, b) => b - a);
+        indicesToRemove.forEach(idx => expenses.splice(idx, 1));
+        saveToStorage();
+        renderTable();
     });
 
     clearBtn.addEventListener('click', () => {
-    expenses = [];
-    saveToStorage();
-    renderTable();
+        expenses = [];
+        saveToStorage();
+        renderTable();
     });
 
     saveBtn.addEventListener('click', () => {
