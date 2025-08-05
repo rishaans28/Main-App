@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     clearBtn.addEventListener('click', () => {
-        expenses = [];
+        expenses = []; 
         saveToStorage();
         renderTable();
     });
