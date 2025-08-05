@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
         nameInput.value = '';
         amountInput.value = '';
-        dateInput.value = '';
         categorySelect.selectedIndex = 0;
         });
     
